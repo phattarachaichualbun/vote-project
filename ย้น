@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <title>เว็บโหวตด้วยโดเนท</title>
+</head>
+<body>
+  <h1>โหวตด้วยโดเนท</h1>
+  <form id="donateForm">
+    <label for="groupSelect">เลือกกลุ่มที่ต้องการโหวต:</label><br />
+    <select id="groupSelect" name="groupSelect">
+      <option value="groupA">กลุ่ม A</option>
+      <option value="groupB">กลุ่ม B</option>
+      <option value="groupC">กลุ่ม C</option>
+    </select><br /><br />
+    <label for="slipUpload">อัปโหลดสลิปจ่ายเงิน:</label><br />
+    <input type="file" id="slipUpload" name="slipUpload" accept="image/*" /><br /><br />
+    <button type="submit">ส่งโหวต</button>
+  </form>
+
+  <script type="module">
+    // ตัวอย่างโค้ดป้องกันฟอร์มรีเฟรชหน้า
+    const form = document.getElementById('donateForm');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      alert('ส่งโหวตเรียบร้อย (ตัวอย่าง)');
+      // TODO: ใส่โค้ด Firebase upload + update คะแนนจริงที่นี่
+    });
+  </script>
+</body>
+</html>
